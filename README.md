@@ -1,3 +1,6 @@
+
+Note: .env file is ignored by git as it has sensitive data (Google API_KEY) to make it work we need to create API_KEY and use it by creating .env file inside the project and create REACT_APP_API_KEY=your_api_key
+
 FEATURES.......................
 
 ..Home
