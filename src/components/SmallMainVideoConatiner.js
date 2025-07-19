@@ -30,7 +30,7 @@ const SmallMainVideoConatiner = () => {
     }
 
     const json = await data.json();
-    if (value === null || value == "Live") {
+    if (value === null || value === "Live") {
       setJsonData(json?.items);
     } else {
       const filteredData = json?.items.filter((res) =>
@@ -50,7 +50,7 @@ const SmallMainVideoConatiner = () => {
         isOpen ? "w-full overflow-y-scroll overflow-x-hidden" : "w-full "
       } `}
     >
-      {value == "Live" && <LiveChat />}
+      {value === "Live" && <LiveChat />}
       <div
         className={`${
           value === "Live" ? "absolute top-[600px]" : " absolute top-0"
