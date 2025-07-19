@@ -12,7 +12,7 @@ const MainVideo = () => {
   const [details, setDetails] = useState(null);
 
   const dispatch = useDispatch();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  //eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchData();
   }, [videoId]);
