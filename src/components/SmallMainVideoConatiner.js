@@ -9,6 +9,7 @@ import LiveChat from "./LiveChat";
 const SmallMainVideoConatiner = () => {
   const value = useSelector((store) => store.testing.testValue);
   const [jsonData, setJsonData] = useState([]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const timer = setTimeout(() => {
       fetchData();
