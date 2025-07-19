@@ -8,6 +8,7 @@ import { LIVE_API } from "../utils/constants";
 const MainVideoContainer = () => {
   const value = useSelector((store) => store.testing.testValue);
   const [jsonData, setJsonData] = useState([]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const timer = setTimeout(() => {
       fetchData();
