@@ -77,7 +77,7 @@ const Header = () => {
               }
             }}
           />
-          {searchResults.length > 0 && searchPanel && (
+          {Array.isArray(searchResults) && searchResults.length > 0 && searchPanel && (
             <div className="fixed w-[550px] rounded-lg p-3 bg-white shadow-lg shadow-gray-400 border-gray-200">
               <ul>
                 {searchResults.map((s) => (
