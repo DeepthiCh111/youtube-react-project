@@ -70,7 +70,7 @@ const Header = () => {
             onFocus={() => setSearchPanel(true)}
             onBlur={() => setSearchPanel(false)}
             onKeyDown={(e) => {
-              if (e.key === "Enter") {
+              if (e.key == "Enter") {
                 setSearchValue(e.target.value);
                 setSearchResults([]);
                 dispatch(addTestValue(e.target.value));
