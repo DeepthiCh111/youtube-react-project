@@ -8,6 +8,7 @@ import { generateRandomSentence, generate } from "../utils/helper";
 const LiveChat = () => {
   const chatMessages = useSelector((store) => store.chat.messages);
   const dispatch = useDispatch();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const i = setInterval(() => {
       dispatch(
