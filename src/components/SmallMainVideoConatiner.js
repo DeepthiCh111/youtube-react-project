@@ -20,18 +20,17 @@ const SmallMainVideoConatiner = () => {
   }, [value]);
 
   const fetchData = async () => {
-    var data;
     if (value === "Live") {
-      data = await fetch(LIVE_API);
+      var data = await fetch(LIVE_API);
     } else {
-      data = await fetch(
+      var data = await fetch(
         "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +
           API_KEY
       );
     }
 
     const json = await data.json();
-    if (value === null || value === "Live") {
+    if (value === null || value == "Live") {
       setJsonData(json?.items);
     } else {
       const filteredData = json?.items.filter((res) =>
@@ -51,7 +50,7 @@ const SmallMainVideoConatiner = () => {
         isOpen ? "w-full overflow-y-scroll overflow-x-hidden" : "w-full "
       } `}
     >
-      {value === "Live" && <LiveChat />}
+      {value == "Live" && <LiveChat />}
       <div
         className={`${
           value === "Live" ? "absolute top-[600px]" : " absolute top-0"
