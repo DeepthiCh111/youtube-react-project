@@ -21,7 +21,7 @@ const MainVideoContainer = () => {
 
   const fetchData = async () => {
     var data;
-    if (value === "Live") {
+    if (value == "Live") {
       data = await fetch(LIVE_API);
     } else {
       data = await fetch(
@@ -31,7 +31,7 @@ const MainVideoContainer = () => {
     }
 
     const json = await data.json();
-    if (value === null) {
+    if (value == null) {
       setJsonData(json?.items);
     } else {
       const filteredData = json?.items.filter((res) =>
