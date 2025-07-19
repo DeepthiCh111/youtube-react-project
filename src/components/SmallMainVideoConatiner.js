@@ -22,7 +22,7 @@ const SmallMainVideoConatiner = () => {
 
   const fetchData = async () => {
     var data;
-    if (value === "Live") {
+    if (value == "Live") {
       data = await fetch(LIVE_API);
     } else {
       data = await fetch(
@@ -32,7 +32,7 @@ const SmallMainVideoConatiner = () => {
     }
 
     const json = await data.json();
-    if (value === null || value === "Live") {
+    if (value == null || value == "Live") {
       setJsonData(json?.items);
     } else {
       const filteredData = json?.items.filter((res) =>
@@ -52,10 +52,10 @@ const SmallMainVideoConatiner = () => {
         isOpen ? "w-full overflow-y-scroll overflow-x-hidden" : "w-full "
       } `}
     >
-      {value === "Live" && <LiveChat />}
+      {value == "Live" && <LiveChat />}
       <div
         className={`${
-          value === "Live" ? "absolute top-[600px]" : " absolute top-0"
+          value == "Live" ? "absolute top-[600px]" : " absolute top-0"
         } pb-3 no-scrollbar z-10   bg-white overflow-x-auto ${
           isOpen ? "w-full mx-2" : "w-full px-4 mx-5"
         }`}
@@ -65,7 +65,7 @@ const SmallMainVideoConatiner = () => {
 
       <div
         className={`${
-          value === "Live" ? "absolute top-[600px]" : ""
+          value == "Live" ? "absolute top-[600px]" : ""
         } flex flex-wrap mt-16 justify-between ${
           isOpen ? "w-[calc(100%-1rem)] mx-3" : "w-[calc(100%+3rem)] px-5 mx-0"
         }`}
