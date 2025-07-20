@@ -68,9 +68,13 @@ const MainVideoContainer = () => {
           isOpen ? "w-[calc(100%-1rem)] mx-3" : "w-[calc(100%+3rem)] px-5 mx-0"
         }`}
       >
-        {jsonData.map((jsonData) => (
-          <Video key={jsonData.id} videoData={jsonData} />
-        ))}
+        {jsonData.length === 0 ? (
+  <div>No results found</div>
+) : (
+  jsonData.map((data) => (
+    <Video key={data.id} videoData={data} />
+  ))
+)}
       </div>
     </div>
   );
