@@ -22,7 +22,7 @@ const SmallMainVideoConatiner = () => {
 
   const fetchData = async () => {
     var data;
-    if (value == "Live") {
+    if (value == "live") {
       data = await fetch(LIVE_API);
     } else {
       data = await fetch(
@@ -32,7 +32,7 @@ const SmallMainVideoConatiner = () => {
     }
 
     const json = await data.json();
-    if (value == null || value == "Live") {
+    if (value == null || value == "live") {
       setJsonData(json?.items);
     } else {
       const filteredData = json?.items.filter((res) =>
@@ -52,7 +52,7 @@ const SmallMainVideoConatiner = () => {
         isOpen ? "w-full overflow-y-scroll overflow-x-hidden" : "w-full "
       } `}
     >
-      {value == "Live" && <LiveChat />}
+      {value == "live" && <LiveChat />}
       <div
         className={`${
           value == "Live" ? "absolute top-[600px]" : " absolute top-0"
