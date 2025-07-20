@@ -22,7 +22,8 @@ const MainVideoContainer = () => {
   const fetchData = async () => {
     var data;
     if (value == "Live") {
-      data = await fetch(LIVE_API);
+      data = await fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +
+          API_KEY);
     } else {
       data = await fetch(
         "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +
