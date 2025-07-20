@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggle } from "../utils/SliderSlice";
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
-import { QUERY_SUGGESTIONS, SUGGESTIONS } from "../utils/constants";
+import { QUERY_SUGGESTIONS} from "../utils/constants";
 import { addSearchResult } from "../utils/searchSlice";
 import { addTestValue } from "../utils/testSlice";
 const Header = () => {
@@ -29,7 +29,7 @@ const Header = () => {
   }, [searchValue]);
 
   const getSearchApiResult = async () => {
-    const data = await fetch(QUERY_SUGGESTIONS + searchValue+SUGGESTIONS);
+    const data = await fetch(QUERY_SUGGESTIONS + searchValue);
     const json = await data.json();
 
     setSearchResults(json[1]);
