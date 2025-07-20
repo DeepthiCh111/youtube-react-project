@@ -14,7 +14,6 @@ const Header = () => {
   const [searchValue, setSearchValue] = useState("");
 
   const cachedResult = useSelector((store) => store.search);
-// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const timer = setTimeout(() => {
       if (cachedResult[searchValue]) {
